@@ -4,6 +4,8 @@ image:
   repository:
   tag:
 
+imagePullSecrets: {}
+
 ingress:
   enabled: false
   host: example.com
