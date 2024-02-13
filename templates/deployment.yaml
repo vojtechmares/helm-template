@@ -26,16 +26,16 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: Always
           ports:
-            - name: {{ .Values.service.portName }}
-              containerPort: {{ .Values.service.portNumber }}
+            - name: {{ .Values.service.port.name }}
+              containerPort: {{ .Values.service.port.number }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /livez
-              port: {{ .Values.service.portName }}
+              port: {{ .Values.service.port.name }}
           readinessProbe:
             httpGet:
               path: /readyz
-              port: {{ .Values.service.portName }}
+              port: {{ .Values.service.port.name }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

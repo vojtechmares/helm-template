@@ -8,10 +8,10 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.portNumber }}
-      targetPort: {{ .Values.service.portNumber }}
+    - port: {{ .Values.service.port.number }}
+      targetPort: {{ .Values.service.port.number }}
       protocol: TCP
-      name: {{ .Values.service.portName }}
+      name: {{ .Values.service.port.name }}
 
   selector:
     app.kubernetes.io/name: {{ .Chart.Name }}
