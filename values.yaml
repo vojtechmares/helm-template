@@ -1,10 +1,9 @@
 replicaCount: 1
 
 image:
+  pullSecrets: []
   repository:
   tag:
-
-imagePullSecrets: {}
 
 ingress:
   enabled: false
